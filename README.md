@@ -1,8 +1,8 @@
 Unicrow
 =======
 
-Sample Django Template
-----------------------
+Sample Django Project Layout
+-----------------------------
 
 Usage:
 
