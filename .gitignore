@@ -1,3 +1,9 @@
 dev.db
 *.pyc
-static/media/*
+media/
+
+venv
+
+._*
+.DS_Store
+*~
