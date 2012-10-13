@@ -30,11 +30,11 @@ DATABASES = {
 # timezone as the operating system.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
-TIME_ZONE = "UTC"
+TIME_ZONE = None
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "tr-TR"
 
 SITE_ID = 1
 
@@ -137,6 +137,12 @@ INSTALLED_APPS = (
 	'django.contrib.admin',
 )
 
+FIXTURE_DIRS = (
+	os.path.join(PROJECT_ROOT, "fixtures"),
+)
+
+from dev import *
+
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
 # the site admins on every HTTP 500 error when DEBUG=False.
@@ -165,9 +171,3 @@ LOGGING = {
 		},
 	}
 }
-
-FIXTURE_DIRS = (
-	os.path.join(PROJECT_ROOT, "fixtures"),
-)
-
-from dev import *
