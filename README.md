@@ -1,6 +1,3 @@
-Unicrow
-=======
-
 Sample Django Project Layout
 -----------------------------
 
