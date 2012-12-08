@@ -172,4 +172,13 @@ LOGGING = {
 	}
 }
 
-from dev import *
+if len(sys.argv) > 1:
+	RUNNING_DEVSERVER = (sys.argv[1] == 'runserver')
+else:
+	RUNNING_DEVSERVER = False
+
+if RUNNING_DEVSERVER:
+	from dev import *
+else:
+	from production import *
+
