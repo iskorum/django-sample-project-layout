@@ -1,1 +1,1 @@
-import {{ project_name }}.settings import defaults
+from {{ project_name }}.settings.defaults import *

@@ -8,8 +8,8 @@ DATABASES = {
 	'default': {
 		'ENGINE': 'django.db.backends.mysql',	# Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
 		'NAME': '{{ project_name }}',			# Or path to database file if using sqlite3.
-		'USER': 'root',							# Not used with sqlite3.
-		'PASSWORD': 'root',						# Not used with sqlite3.
+		'USER': '{{ project_name }}',							# Not used with sqlite3.
+		'PASSWORD': 'sifreni yaz bura ;)',						# Not used with sqlite3.
 		'HOST': 'localhost',					# Set to empty string for localhost. Not used with sqlite3.
 		'PORT': '',								# Set to empty string for default. Not used with sqlite3.
 	}
@@ -29,7 +29,7 @@ TIME_ZONE = None
 LANGUAGE_CODE = "tr-TR"
 
 # If you set this to False, Django will not use timezone-aware datetimes.
-USE_TZ = False
+USE_TZ = True
 
 
 STATICFILES_DIRS = (

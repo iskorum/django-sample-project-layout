@@ -47,7 +47,6 @@ SITE_ID = 1
 # to load the internationalization machinery.
 USE_I18N = True
 
-
 # If you set this to False, Django will not format dates, numbers and
 # calendars according to the current locale.
 USE_L10N = True
@@ -142,7 +141,6 @@ FIXTURE_DIRS = (
 	os.path.join(PROJECT_ROOT, "fixtures"),
 )
 
-
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
 # the site admins on every HTTP 500 error when DEBUG=False.
@@ -172,13 +170,5 @@ LOGGING = {
 	}
 }
 
-if len(sys.argv) > 1:
-	RUNNING_DEVSERVER = (sys.argv[1] == 'runserver')
-else:
-	RUNNING_DEVSERVER = False
 
-if RUNNING_DEVSERVER:
-	from dev import *
-else:
-	from production import *
-
+from dev import *
