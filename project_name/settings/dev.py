@@ -24,10 +24,6 @@ TIME_ZONE = None
 # http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_CODE = "tr-TR"
 
-# If you set this to False, Django will not use timezone-aware datetimes.
-USE_TZ = False
-
-
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
 MEDIA_ROOT = os.path.join(PACKAGE_ROOT, "static", "media")

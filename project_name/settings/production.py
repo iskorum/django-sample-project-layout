@@ -28,9 +28,6 @@ TIME_ZONE = None
 # http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_CODE = "tr-TR"
 
-# If you set this to False, Django will not use timezone-aware datetimes.
-USE_TZ = True
-
 
 STATICFILES_DIRS = (
 	
