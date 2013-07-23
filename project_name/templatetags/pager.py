@@ -78,8 +78,8 @@ class PagerNode(template.Node):
 			p = {
 				'current_page':current_page,
 				'total_pages':total_page,
-				'previous_page': context[self.obj].previous_page_number(),
-				'next_page': context[self.obj].next_page_number(),
+				'previous_page': current_page-1,
+				'next_page': current_page+1,
 				'has_previous': context[self.obj].has_previous(),
 				'has_next': context[self.obj].has_next(),
 				'items': items
