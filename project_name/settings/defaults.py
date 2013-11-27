@@ -169,6 +169,3 @@ LOGGING = {
 		},
 	}
 }
-
-
-from dev import *
