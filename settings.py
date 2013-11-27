@@ -1,1 +1,2 @@
-from {{ project_name }}.settings.defaults import *
+from {{ project_name }}.settings.dev import *
+#from {{ project_name }}.settings.production import *

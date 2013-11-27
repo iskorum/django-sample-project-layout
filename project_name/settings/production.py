@@ -1,5 +1,4 @@
-import os
-from defaults import PACKAGE_ROOT, INSTALLED_APPS
+from .defaults import *
 
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
