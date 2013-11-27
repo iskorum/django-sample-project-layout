@@ -1,9 +1,11 @@
 dev.db
-*.pyc
-media/
-
 venv
 
+*.pyc
 ._*
 .DS_Store
 *~
+
+media/
+production/logs/*
+!production/logs/readme

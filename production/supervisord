@@ -1,0 +1,6 @@
+# this file must be placed in /etc/supervisor/conf.d/ (generally) and named properly.
+[program:{{ project_name }}]
+command = /var/www/{{ project_name }}/production/gunicorn_start
+user = {{ project_name }}
+stdout_logfile = /var/www/{{ project_name }}/production/logs/gunicorn_supervisor.log
+redirect_stderr = true
