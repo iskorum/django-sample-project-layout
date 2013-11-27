@@ -3,38 +3,49 @@ from .defaults import *
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
-DATABASES = {
-	'default': {
-		'ENGINE': 'django.db.backends.mysql',	# Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-		'NAME': '{{ project_name }}',			# Or path to database file if using sqlite3.
-		'USER': '{{ project_name }}',							# Not used with sqlite3.
-		'PASSWORD': 'sifreni yaz bura ;)',						# Not used with sqlite3.
-		'HOST': 'localhost',					# Set to empty string for localhost. Not used with sqlite3.
-		'PORT': '',								# Set to empty string for default. Not used with sqlite3.
-	}
-}
+ADMINS = [
+	# ("Your Name", "your_email@example.com"),
+]
 
-# Local time zone for this installation. Choices can be found here:
-# http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
-# although not all choices may be available on all operating systems.
-# On Unix systems, a value of None will cause Django to use the same
-# timezone as the operating system.
-# If running in a Windows environment this must be set to the same as your
-# system time zone.
-TIME_ZONE = None
+MANAGERS = ADMINS
 
-# Language code for this installation. All choices can be found here:
-# http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = "tr-TR"
-
-
-STATICFILES_DIRS = (
-	
-)
-
+# App used only at production
 INSTALLED_APPS += (
 
 )
+
+# https://docs.djangoproject.com/en/1.6/ref/settings/#databases
+DATABASES = {
+	'default': {
+		'ENGINE': 'django.db.backends.mysql',	# Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+		'NAME': '{{ project_name }}',
+		'USER': '{{ project_name }}',
+		'PASSWORD': 'sifreni yaz bura ;)',
+		'HOST': 'localhost',
+		'PORT': '',
+	}
+}
+
+ALLOWED_HOSTS = []
+
+# Absolute filesystem path to the directory that will hold user-uploaded files.
+# Example: "/home/media/media.lawrence.com/media/"
+MEDIA_ROOT = os.path.join(PACKAGE_ROOT, "static", "media")
+
+# URL that handles the media served from MEDIA_ROOT. Make sure to use a
+# trailing slash.
+# Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
+MEDIA_URL = "/static/media/"
+
+# Absolute path to the directory static files should be collected to.
+# Don"t put anything in this directory yourself; store your static files
+# in apps" "static/" subdirectories and in STATICFILES_DIRS.
+# Example: "/home/media/media.lawrence.com/static/"
+STATIC_ROOT = os.path.join(PACKAGE_ROOT, "static")
+
+# URL prefix for static files.
+# Example: "http://media.lawrence.com/static/"
+STATIC_URL = "/static/"
 
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
