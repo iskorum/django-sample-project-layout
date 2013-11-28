@@ -1,3 +1,4 @@
+import os
 from .defaults import BASE_DIR, PACKAGE_ROOT
 
 # Whether to use HttpOnly flag on the CSRF cookie.
@@ -23,7 +24,7 @@ FIXTURE_DIRS = (
 # 	os.path.join(PACKAGE_ROOT, "locale"),
 # )
 
-# Whether to prepend the “www.” subdomain to URLs that don’t have it 
+# Whether to prepend the "www." subdomain to URLs that don't have it
 PREPEND_WWW = False
 
 
