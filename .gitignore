@@ -6,6 +6,8 @@ venv
 .DS_Store
 *~
 
-media/
+media/*
+!media/.gitkeep
+
 production/logs/*
-!production/logs/readme
+!production/logs/.gitkeep

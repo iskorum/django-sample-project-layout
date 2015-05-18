@@ -27,19 +27,6 @@ FIXTURE_DIRS = (
 # Whether to prepend the "www." subdomain to URLs that don't have it
 PREPEND_WWW = False
 
-
-TEMPLATE_CONTEXT_PROCESSORS = (
-	"django.contrib.auth.context_processors.auth",
-	"django.core.context_processors.debug",
-	"django.core.context_processors.i18n",
-	"django.core.context_processors.media",
-	"django.core.context_processors.static",
-	"django.core.context_processors.tz",
-	"django.core.context_processors.request",
-	"django.contrib.messages.context_processors.messages",
-)
-
-
 # -------------------------------------------------------- AUTH -------------------------------------------------------- #
 # The URL where requests are redirected after login when the contrib.auth.login view gets no next parameter.
 # This is used by the login_required() decorator, for example.
