@@ -1,0 +1,25 @@
+{% if pager.total_pages > 1 %}
+<!-- PAGINATION -->
+<div class="pagination">
+	<ul>
+	{% if pager.has_previous %}
+		<li><a href="?{{pager.pager_var}}={{ pager.previous_page }}{{pager.get_params}}" class="prev">Önceki Sayfa</a></li>
+	{% endif %}
+
+	{% for i in pager.pages %}
+		<li>
+		{% if i == 0 %}
+			<span class="break">&hellip;</span>
+		{% else %}
+			<a {% if i == pager.current_page %}class="active"{% endif %} href="?{{pager.pager_var}}={{ i }}{{pager.get_params}}">{{i}}</a>
+		{% endif %}
+		</li>
+	{% endfor %}
+
+	{% if pager.has_next %}
+		<li><a href="?{{pager.pager_var}}={{ pager.next_page }}{{pager.get_params}}" class="next">Sonraki Sayfa</a></li>
+	{% endif %}
+	</ul>
+</div>
+<!-- /PAGINATION -->
+{% endif %}
