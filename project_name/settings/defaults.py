@@ -60,7 +60,7 @@ TEMPLATES = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
-LANGUAGE_CODE = "tr-TR"
+LANGUAGE_CODE = "tr"
 
 TIME_ZONE = 'UTC'
 
@@ -72,3 +72,4 @@ USE_TZ = True
 
 
 from .extra import *
+from .app_settings import *
