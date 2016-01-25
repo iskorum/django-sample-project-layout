@@ -1,4 +1,4 @@
-dev.db
+db.sqlite3
 venv
 
 *.pyc

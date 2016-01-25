@@ -2,6 +2,8 @@ from .defaults import *
 
 DEBUG = True
 
+ALLOWED_HOSTS = ["*"]
+
 # App used only at development
 INSTALLED_APPS += (
 
