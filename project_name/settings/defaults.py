@@ -59,7 +59,7 @@ TEMPLATES = [
 
 
 # Internationalization
-# https://docs.djangoproject.com/en/1.6/topics/i18n/
+# https://docs.djangoproject.com/en/1.9/topics/i18n/
 LANGUAGE_CODE = "tr"
 
 TIME_ZONE = 'UTC'

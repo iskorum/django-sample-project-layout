@@ -1,7 +1,7 @@
 # this file must be placed in /etc/nginx/sites-available/ (generally) and named properly.
 # and a link to /etc/nginx/sites-enabled/
 
-upstream {{ project_name }}.com {
+upstream {{ project_name }} {
   # fail_timeout=0 means we always retry an upstream even if it failed
   # to return a good HTTP response (in case the Unicorn master nukes a
   # single worker for timing out).
@@ -14,7 +14,7 @@ server {
     listen   80;
     server_name {{ project_name }}.com; # your domain !!!! Edit here
 
-    client_max_body_size 4G;
+    client_max_body_size 100M;
 
     access_log /var/www/{{ project_name }}/production/logs/nginx-access.log;
     error_log /var/www/{{ project_name }}/production/logs/nginx-error.log;
@@ -40,12 +40,8 @@ server {
         # redirects, we set the Host: header above already.
         proxy_redirect off;
 
-        # Try to serve static files from nginx, no point in making an
-        # *application* server like Unicorn/Rainbows! serve static files.
-        if (!-f $request_filename) {
-            proxy_pass http://{{ project_name }}.com; # your domain !!!! Edit here
-            break;
-        }
+        proxy_pass http://{{ project_name }};
+
     }
 
     # Error pages
