@@ -8,15 +8,12 @@ ADMINS = [
 
 MANAGERS = ADMINS
 
-# App used only at production
-INSTALLED_APPS += (
+ALLOWED_HOSTS = []
 
-)
-
-# https://docs.djangoproject.com/en/1.9/ref/settings/#databases
+# https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 DATABASES = {
 	'default': {
-		'ENGINE': 'django.db.backends.mysql',	# Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+		'ENGINE': 'django.db.backends.postgresql',	# Add 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
 		'NAME': '{{ project_name }}',
 		'USER': '{{ project_name }}',
 		'PASSWORD': 'sifreni yaz bura ;)',
@@ -25,16 +22,16 @@ DATABASES = {
 	}
 }
 
-ALLOWED_HOSTS = []
 
-# Absolute filesystem path to the directory that will hold user-uploaded files.
-# Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+# App used only at production
+INSTALLED_APPS += [
 
-# URL that handles the media served from MEDIA_ROOT. Make sure to use a
-# trailing slash.
-# Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
-MEDIA_URL = "/media/"
+]
+
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY_FILE = os.path.join(BASE_DIR, "production", "secret_key.txt")
+with open(SECRET_KEY_FILE) as f:
+    SECRET_KEY = f.read().strip()
 
 # Absolute path to the directory static files should be collected to.
 # Don"t put anything in this directory yourself; store your static files
@@ -42,9 +39,15 @@ MEDIA_URL = "/media/"
 # Example: "/home/media/media.lawrence.com/static/"
 STATIC_ROOT = os.path.join(PACKAGE_ROOT, "static")
 
-# URL prefix for static files.
-# Example: "http://media.lawrence.com/static/"
-STATIC_URL = "/static/"
-
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+SERVER_EMAIL = 'root@localhost'
+
+EMAIL_HOST = 'localhost'
+EMAIL_PORT = 25
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = False
+
+DEFAULT_FROM_EMAIL = 'webmaster@localhost'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''

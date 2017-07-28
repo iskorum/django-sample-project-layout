@@ -4,13 +4,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
-# App used only at development
-INSTALLED_APPS += (
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = "{{ secret_key }}"
 
-)
 
 # Database
-# https://docs.djangoproject.com/en/1.9/ref/settings/#databases
+# https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 DATABASES = {
 	'default': {
 		'ENGINE': 'django.db.backends.sqlite3',
@@ -18,18 +17,13 @@ DATABASES = {
 	}
 }
 
-# Absolute filesystem path to the directory that will hold user-uploaded files.
-# Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+# App used only at development
+INSTALLED_APPS += [
 
-# URL that handles the media served from MEDIA_ROOT. Make sure to use a
-# trailing slash.
-# Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
-MEDIA_URL = "/media/"
-
-# URL prefix for static files.
-# Example: "http://media.lawrence.com/static/"
-STATIC_URL = "/static/"
-
+]
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+# Password validation
+# https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
+AUTH_PASSWORD_VALIDATORS = []
