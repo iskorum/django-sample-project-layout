@@ -10,7 +10,9 @@ MANAGERS = ADMINS
 
 ALLOWED_HOSTS = []
 
-# https://docs.djangoproject.com/en/1.11/ref/settings/#databases
+
+# Database
+# https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 DATABASES = {
 	'default': {
 		'ENGINE': 'django.db.backends.postgresql',	# Add 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
@@ -28,10 +30,28 @@ INSTALLED_APPS += [
 
 ]
 
+
+# Password validation
+# https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
+AUTH_PASSWORD_VALIDATORS = [
+	{
+		'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+	},
+	{
+		'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+	},
+	{
+		'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+	},
+	{
+		'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+	},
+]
+
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY_FILE = os.path.join(BASE_DIR, "production", "secret_key.txt")
 with open(SECRET_KEY_FILE) as f:
-    SECRET_KEY = f.read().strip()
+	SECRET_KEY = f.read().strip()
 
 # Absolute path to the directory static files should be collected to.
 # Don"t put anything in this directory yourself; store your static files

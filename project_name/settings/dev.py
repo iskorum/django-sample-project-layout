@@ -4,12 +4,13 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
+
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = "{{ secret_key }}"
 
 
 # Database
-# https://docs.djangoproject.com/en/1.11/ref/settings/#databases
+# https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 DATABASES = {
 	'default': {
 		'ENGINE': 'django.db.backends.sqlite3',
@@ -22,8 +23,10 @@ INSTALLED_APPS += [
 
 ]
 
+
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
+
 # Password validation
-# https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
+# https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
 AUTH_PASSWORD_VALIDATORS = []
