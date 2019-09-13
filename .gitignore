@@ -6,6 +6,8 @@ venv
 .DS_Store
 *~
 
+local.py
+
 media/*
 !media/.gitkeep
 

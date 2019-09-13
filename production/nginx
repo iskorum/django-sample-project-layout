@@ -15,7 +15,7 @@ server {
 	access_log /home/{{ project_name }}/production/logs/nginx_access.log;
 	error_log /home/{{ project_name }}/production/logs/nginx_error.log;
 
-	root /home/bisigortaci;
+	root /home/{{ project_name }};
 
 	location /static/ {
 		alias   /home/{{ project_name }}/source/{{ project_name }}/static/;

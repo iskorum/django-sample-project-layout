@@ -1,6 +1,9 @@
 from .defaults import *
 
+
+# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+
 
 ALLOWED_HOSTS = ["*"]
 
@@ -10,7 +13,7 @@ SECRET_KEY = "{{ secret_key }}"
 
 
 # Database
-# https://docs.djangoproject.com/en/2.1/ref/settings/#databases
+# https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 DATABASES = {
 	'default': {
 		'ENGINE': 'django.db.backends.sqlite3',
@@ -18,9 +21,9 @@ DATABASES = {
 	}
 }
 
+
 # App used only at development
 INSTALLED_APPS += [
-
 ]
 
 
