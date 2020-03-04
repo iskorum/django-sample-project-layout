@@ -1,1 +1,10 @@
-Django==2.2.10
+Django==3.0.4
+
+# development
+#django-debug-toolbar
+ipython
+
+
+# production
+#uwsgi
+#gunicorn
